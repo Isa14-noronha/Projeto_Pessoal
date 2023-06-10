@@ -1,0 +1,81 @@
+.headerCadastro {
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    background-repeat: no-repeat;
+    /* height: 100vh; */
+    background-size: cover;
+    background-color: white;
+}
+
+.headerCadastro .container {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.telaCadastro{
+    background-image: url(./imagens/telaFundo.png);
+    width: 100%;
+    height: 98vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cadastro {
+    background-color: white;
+    box-shadow: -3px -2px 20px 4px  rgba(0, 0, 0, 0.582);
+    width: 25%;
+    height: 70%;
+    border-radius: 28px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    /* padding: 5px; */
+}
+
+.cadastro h1{
+    padding-bottom: 30px;
+}
+
+.infoCadastro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom:  70px;
+    flex-direction: column;
+}
+
+.inputs{
+    background-color: #F6F6F6;
+    border: none;
+    border-radius: 30px;
+    width: 80%;
+    height: 13px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1.5%;
+}
+
+.infoCadastro button{
+    background-color: #001321;
+    width: 90%;
+    border-radius: 30px;
+    color: white;
+    border: #001321;
+    height: 37px;
+}
+
+.checkbox{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row; 
+    gap: 17px;
+}
+
+
