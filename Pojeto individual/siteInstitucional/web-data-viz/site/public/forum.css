@@ -1,0 +1,58 @@
+.CardGraficos {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 8%;
+}
+
+.grafico {
+    width: 45%;
+    border: 1px solid #b9b9b9cc;
+    background-color: #ecececa6;
+}
+
+.cardSelecao {
+    padding-left: 17px;
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+}
+
+.cardSelecao select {
+    background-color: #F6F6F6;
+    border: #F6F6F6;
+    border-radius: 15px;
+    width: 25%;
+}
+
+.cardTextarea {
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: #ffeea59c;
+    width: 85%;
+    height: 155px;
+    align-items: flex-end;
+    margin-bottom: 30px;
+    align-items: center;
+}
+
+.comentariosCard {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    background-color: #fff6cf9c;
+}
+
+.comentariosCard button{
+    width: 25%;
+    background-color: #03071E;
+    color: aliceblue;
+    border-radius: 20px;
+    border: #03071E;
+    padding: 5px;
+}
+
+.Cardtext {
+    background-color: #fff6cf9c;
+    border: 1px solid #240d0091;
+}

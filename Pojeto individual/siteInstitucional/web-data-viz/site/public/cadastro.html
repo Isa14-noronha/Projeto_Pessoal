@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mujicare</title>
+    <link rel="stylesheet" href="./tela_inicial.css">
+    <link rel="stylesheet" href="./cadastro.css">
+</head>
+
+<body>
+    <!-- comeco do header  -->
+    <div class="headerCadastro">
+        <div class="container">
+            <a href="./index.html"><img src="./imagens/logo.png" alt="Logo do Mujicare" width="15%"></a>
+
+            <div class="infos">
+                <ul class="navBar">
+                    <li><a href="./index.html#valores">Valores</a></li>
+                    <li>|</li>
+                    <li> <a href="./partituras.html">Partituras</a></li>
+                    <li>|</li>
+                    <li><a href="./index.html#sobreMim">Sobre mim</a></li>
+                    <li>|</li>
+                    <li> <a href="./forum.html">Fórum</a></li>
+                    <li>|</li>
+                    <li> <a href="./login.html"><img src="./imagens/login.png" alt="imagem de login" width="60px"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Fim do header  -->
+
+    <!-- comeco da pagina -->
+
+    <div class="telaCadastro">
+
+        <div class="cadastro" id="cadastro">
+            <div>
+                <div style="padding: 10px;">
+                    <h2>Cadastre-se em nosso site</h2>
+                </div>
+                <div class="infoCadastro">
+                    <div class="inputs">
+                        <img src="./incons/email_icon.png" width="10%">
+                        <input type="email" id="ipt_email" placeholder="Email">
+                    </div>
+
+                    <div class="inputs">
+                        <img src="./incons/usuario_icon.png" width="10%">
+                        <input type="text" id="ipt_nome" placeholder="Nome de usuário">
+                    </div>
+
+                    <div class="inputs">
+                        <img src="./incons/senha_icon.png" width="10%">
+                        <input type="password" id="ipt_senha" placeholder="Senha">
+                    </div>
+
+                    <div class="inputs">
+                        <img src="./incons/senha_icon.png" width="10%">
+                        <input type="password" id="ipt_confirmarSenha" placeholder="Confirme sua Senha">
+                    </div> <br>
+
+
+                    <button onclick="continuar()">Continuar</button><br>
+                    <a href="./login.html">Já possui cadastro? Clique aqui</a>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="cadastro" id="checkbox" style="display: none;">
+            <div class="infoCadastro">
+                <br>
+                <h2>Esamos quase lá...</h2>
+
+                <div style="padding: 10px;">
+                    <h3> Quais instrumento você toca</h3>
+                </div>
+                <div class="checkbox">
+                    <div>
+                        <div>
+                            <input type="checkbox" id="ipt_guitarra" name="instrumento" value="0">
+                            <label for="ipt_guitarra">Guitarra</label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" id="ipt_violao" name="instrumento" value="0">
+                            <label for="ipt_violao">Violão</label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" id="ipt_bateria" name="instrumento" value="0">
+                            <label for="ipt_bateria">Bateria</label>
+                        </div>
+                    </div> <br>
+
+                    <div>
+
+                        <div>
+                            <input type="checkbox" id="ipt_violino" name="instrumento" value="0">
+                            <label for="ipt_violino">Violino</label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" id="ipt_piano_teclado" name="instrumento" value="0">
+                            <label for="ipt_piano_teclado">Piano ou Teclado</label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" id="ipt_outros" name="instrumento" value="0">
+                            <label for="ipt_outros">Outros</label>
+                        </div>
+
+                    </div>
+                </div> <br>
+
+                <button onclick="cadastrar()">Cadastar</button><br>
+                <a href="./login.html">Já possui cadastro? Clique aqui</a>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- começo do footer  -->
+    <footer class="footer">
+        <div class="quadrados">
+
+            <div class="contato">
+                <h1>Nosso escritorio</h1>
+                <p>Rua José Netto Junio-61</p>
+                <p>(11)99560-5116</p>
+                <p>mujicare.musica@outlook.com</p>
+            </div>
+
+            <div class="contato">
+                <h1>Horário de atendimento</h1>
+                <p>Segunda a sexta<br>
+                    9:00 às 18:00 </p>
+                <p>Sabados <br>
+                    10:00 às 16:00 </p>
+            </div>
+
+            <div class="contato">
+                <h1>Nossas redes sociais</h1>
+                <p>incon / incon / incon</p>
+                <div style="display: flex; justify-content: center;">
+                    <div class="marque">
+                        <p>Nos marque em suas fotos!</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
+<script>
+
+    var email = "";
+    var nomeUsuario = "";
+    var senha = "";
+    var confirmSenha = "";
+
+    function continuar() {
+
+        email = ipt_email.value;
+        nomeUsuario = ipt_nome.value;
+        senha = ipt_senha.value;
+        confirmSenha = ipt_confirmarSenha.value;
+
+        if (email == "" || nomeUsuario == "" || senha == "" || confirmSenha == "") {
+            alert("Favor, preencher todos os campos")
+        } else if (senha != confirmSenha) {
+            alert("As senhas devem ser iguais")
+        } else {
+            cadastro.style.display = "none";
+            checkbox.style.display = "block"
+        }
+    }
+
+    function cadastrar() {
+        let intrumentos = document.getElementsByName("instrumento");
+
+        for (let i = 0; i < intrumentos.length; i++) {
+            if (intrumentos[i].checked) {
+                console.log("primeira mesagem" + intrumentos[i].value)
+                intrumentos[i].value = 1
+                console.log("segunda mesagem" + intrumentos[i].value)
+            }
+        }
+
+
+        fetch("/cadastro/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                emailServer: email,
+                nomeUsuarioServer: nomeUsuario,
+                senhaServer: senha
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                // cardErro.style.display = "block";
+
+                // mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+                setTimeout(() => {
+                    window.location = "login.html";
+                }, "2000")
+
+                // limparFormulario();
+                // finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            // finalizarAguardar();
+        });
+
+        return false;
+
+
+
+
+    }
+</script>

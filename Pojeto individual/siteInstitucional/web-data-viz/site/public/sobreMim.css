@@ -1,0 +1,16 @@
+.sobre_mim {
+    background-color: #FFEEA5;
+    width: 100%;
+    height: 610px;
+}
+
+.componentes{
+    padding: 10% 8% 8% 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.descricao {
+    width: 40%;
+}

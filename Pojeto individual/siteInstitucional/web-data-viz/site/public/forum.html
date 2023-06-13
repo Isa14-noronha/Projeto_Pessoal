@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum</title>
+    <link rel="stylesheet" href="./tela_inicial.css">
+    <link rel="stylesheet" href="forum.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body window.onload="plotarGrafico">
+
+    <div class="headerCadastro">
+        <div class="container">
+            <a href="./index.html"><img src="./imagens/logo.png" alt="Logo do Mujicare" width="15%"></a>
+
+            <div class="infos">
+                <ul class="navBar">
+                    <li><a href="./index.html#valores">Valores</a></li>
+                    <li>|</li>
+                    <li> <a href="./partituras.html">Partituras</a></li>
+                    <li>|</li>
+                    <li><a href="./index.html#sobreMim">Sobre mim</a></li>
+                    <li>|</li>
+                    <li> <a href="./forum copy.html">Fórum</a></li>
+                    <li>|</li>
+                    <li> <a href="./login.html"><img src="./imagens/login.png" alt="imagem de login" width="60px"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="CardGraficos">
+        <div class="grafico">
+            <canvas id="myChart"></canvas>
+        </div>
+
+        <div class="grafico">
+            <canvas id="myChart2"></canvas>
+        </div>
+    </div> <br>
+
+    <hr>
+    <br>
+    <div>
+        <div class="cardSelecao">
+            <div id="div_msg">Selecione: </div><select id="sel_instrumento" onchange="instrumento()">
+                <option id="sel_selecione" value="selecione">Selecione</option>
+                <option id="sel_violino" value="violino">Violino</option>
+                <option id="sel_violao" value="violao">Violão</option>
+                <option id="sel_guitarra" value="guitarra">Guitarra</option>
+                <option id="sel_piano" value="piano">Piano</option>
+                <option id="sel_canto" value="canto">Canto</option>
+                <option id="sel_bateria" value="bateria">Bateria</option>
+            </select>
+        </div>
+
+        <br><br>
+        <div style="display: flex; justify-content: center;">
+            <div class="cardTextarea">
+                <label class="comentariosCard">
+                    Descrição (máximo de 250 caracteres):
+                    <textarea name="descricao" id="textarea_descricao" maxlength="250" rows="5"
+                        class="Cardtext"></textarea>
+                    <br>
+                    <div style="display: flex; justify-content: flex-end;">
+                        <button onclick="comentar()">Comentar</button>
+                    </div>
+                </label>
+            </div>
+        </div>
+        <div id="div_forum"></div>
+
+        
+
+    <footer class="footer">
+        <div class="quadrados">
+
+            <div class="contato">
+                <h1>Nosso escritorio</h1>
+                <p>Rua José Netto Junio-61</p>
+                <p>(11)99560-5116</p>
+                <p>mujicare.musica@outlook.com</p>
+            </div>
+
+            <div class="contato">
+                <h1>Horário de atendimento</h1>
+                <p>Segunda a sexta<br>
+                    9:00 às 18:00 </p>
+                <p>Sabados <br>
+                    10:00 às 16:00 </p>
+            </div>
+
+            <div class="contato">
+                <h1>Nossas redes sociais</h1>
+                <p>incon / incon / incon</p>
+                <div style="display: flex; justify-content: center;">
+                    <div class="marque">
+                        <p>Nos marque em suas fotos!</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+
+function comentar(){
+    if (textarea_descricao.value == ""){
+        Swal.fire('Favor, adicionar um comentário')
+    } else {
+        Swal.fire({
+      position: 'top-center',
+      icon: 'success',
+      title: 'Seu comentário foi adicionado com sucesso',
+      showConfirmButton: false,
+      timer: 1500
+    })  
+    textarea_descricao.value = "";
+    }
+}
+
+function instrumento(){
+        sel_selecione.value = `Selecione um instrumento`
+        sel_violino.value = `<div style="display: flex; justify-content: center;">
+            <div class="cardTextarea">
+                <label class="comentariosCard">
+                   <b>Descrição (máximo de 250 caracteres):</b> 
+                    Estava lendo as partituras, e não estou conseguindo encontrar qual nota se aplica no meu violino
+                </label>
+            </div>
+        </div>`
+
+        sel_violao.value = `   <div style="display: flex; justify-content: center;">
+            <div class="cardTextarea">
+                <label class="comentariosCard">
+                     <b>Descrição (máximo de 250 caracteres):</b>
+                    Estava afinando meu violão, e estorei uma das cordas, alguém sabe um bom lugar para comprar? Moro no bairro Farls
+                </label>
+            </div>
+        </div>`
+
+        sel_guitarra.value = `<div style="display: flex; justify-content: center;">
+            <div class="cardTextarea">
+                <label class="comentariosCard">
+                     <b>Descrição (máximo de 250 caracteres):</b>
+                   Estava pensando em comprar uma nova caixa para tocar minha guitarra. Alguém conhece uma boa loja e barata?
+                </label>
+            </div>
+        </div>
+
+        <div style="display: flex; justify-content: center;">
+            <div class="cardTextarea">
+                <label class="comentariosCard">
+                     <b>Descrição (máximo de 250 caracteres):</b>
+                    Estou co dificuldades em acertar uma nota na guitarra. Fui na página de leitura de partituras, mas ainda não consigo aplicar. Alguém consegue me ajudar
+                </label>
+            </div>
+        </div>`
+
+        sel_bateria.value = ``
+
+        div_forum.innerHTML = `${sel_instrumento.value}`
+    }
+
+window.onload= obterDadosGrafico();
+
+function obterDadosGrafico(){
+    obterDadosGrafico(1)
+}
+  // O gráfico é construído com três funções:
+    // 1. obterDadosGrafico -> Traz dados do Banco de Dados para montar o gráfico da primeira vez
+    // 2. plotarGrafico -> Monta o gráfico com os dados trazidos e exibe em tela
+    // 3. atualizarGrafico -> Atualiza o gráfico, trazendo novamente dados do Banco
+
+    // Esta função *obterDadosGrafico* busca os últimos dados inseridos em tabela de medidas.
+    // para, quando carregar o gráfico da primeira vez, já trazer com vários dados.
+    // A função *obterDadosGrafico* também invoca a função *plotarGrafico*
+
+    //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
+    //     Para ajustar o "select", ajuste o comando sql em src/models
+
+    function obterDadosGrafico() {
+        fetch(`/graficoUsuario/qtdUsuarios`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+                    
+                    plotarGrafico(resposta);
+                    
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+        .catch(function (error) {
+            console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+        });
+    }
+    
+    
+    function plotarGrafico(resposta) {
+        
+        console.log('iniciando plotagem do gráfico...');
+        
+        // Criando estrutura para plotar gráfico - labels
+        let labels = [];
+        
+        // Criando estrutura para plotar gráfico - dados
+        let dados = {
+            labels: labels,
+            datasets: [{
+                label: 'Quantidade de usuário',
+                data: [],
+                // fill: false,
+                backgroundColor: [
+                    "#03071e",
+                    "#ffeea5"
+                ],
+                tension: 0.1, 
+                
+                barPercentage: 0.  
+            },
+        ]
+    };
+    
+    console.log('----------------------------------------------')
+        console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
+        console.log(resposta)   
+        
+        // Inserindo valores recebidos em estrutura para plotar o gráfico
+        for (i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            labels.push('Usuários');
+            dados.datasets[0].data.push(registro.qtd_Usuario);
+        }
+        console.log("oi")   
+
+        console.log('----------------------------------------------')
+        console.log('O gráfico será plotado com os respectivos valores:')
+        console.log('Labels:')
+        console.log(labels)
+        console.log('Dados:')
+        console.log(dados.datasets)
+        console.log('----------------------------------------------')
+
+        // Criando estrutura para plotar gráfico - config
+        const config = {
+            type: 'bar',
+            data: dados,
+        };
+        let myChart2 = new Chart(
+            document.getElementById('myChart2'),
+            config  
+        ); myChart2.update();
+    }
+
+
+    window.onload= obterInstrumentos();
+
+function obterInstrumentos(){
+    obterInstrumentos(1)
+}
+  // O gráfico é construído com três funções:
+    // 1. obterInstrumentos -> Traz dados do Banco de Dados para montar o gráfico da primeira vez
+    // 2. plotarGrafico -> Monta o gráfico com os dados trazidos e exibe em tela
+    // 3. atualizarGrafico -> Atualiza o gráfico, trazendo novamente dados do Banco
+
+    // Esta função *obterInstrumentos* busca os últimos dados inseridos em tabela de medidas.
+    // para, quando carregar o gráfico da primeira vez, já trazer com vários dados.
+    // A função *obterInstrumentos* também invoca a função *plotarGrafico*
+
+    //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
+    //     Para ajustar o "select", ajuste o comando sql em src/models
+
+    function obterInstrumentos() {
+        fetch(`/grafico/selecionarInstrumentos`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+                    
+                    plotarGraficoInstrumentos(resposta);
+                    
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+        .catch(function (error) {
+            console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+        });
+    }
+    
+    
+    function plotarGraficoInstrumentos(resposta) {
+        
+        console.log('iniciando plotagem do gráfico...');
+        
+        // Criando estrutura para plotar gráfico - labels
+        let labels = [];
+        
+        // Criando estrutura para plotar gráfico - dados
+        let dados = {
+            labels: labels,
+            datasets: [{
+                label: 'violino',
+                data: [],
+                // fill: false,
+                backgroundColor: [
+                    "#ffeea5"
+                ],
+                tension: 0.1
+            },
+            {
+                label: 'violao',
+                data: [],
+                // fill: false,
+                backgroundColor: [
+                    "#03071e",
+                ],
+                tension: 0.1
+            },
+            {
+                label: 'guitarra',
+                data: [],
+                // fill: false,
+                backgroundColor: [
+                    "#ffeea59c"
+                ],
+                tension: 0.1
+            },
+            {
+                label: 'bateria',
+                data: [],
+                // fill: false,
+                backgroundColor: [
+                    "#03071e",
+                                 ],
+                tension: 0.1
+            },
+            {
+                label: 'piano',
+                data: [],
+                // fill: false,
+                backgroundColor: [
+                    "#ffeea5"
+                ],
+                tension: 0.1
+            },
+            {
+                label: 'outros',
+                data: [],
+                // fill: false,
+                backgroundColor: [
+                    "#03071e",
+                ],
+                tension: 0.1
+            },
+        ]
+    };
+    
+    console.log('----------------------------------------------')
+        console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
+        console.log(resposta)   
+        
+        // Inserindo valores recebidos em estrutura para plotar o gráfico
+        for (i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            labels.push('Instrumentos tocados por nossos usuários');
+            dados.datasets[0].data.push(registro.violino);
+            dados.datasets[1].data.push(registro.violao);
+            dados.datasets[2].data.push(registro.guitarra);
+            dados.datasets[3].data.push(registro.bateria);
+            dados.datasets[4].data.push(registro.piano);
+            dados.datasets[5].data.push(registro.outros);
+        }
+        console.log("oi")   
+
+        console.log('----------------------------------------------')
+        console.log('O gráfico será plotado com os respectivos valores:')
+        console.log('Labels:')
+        console.log(labels)
+        console.log('Dados:')
+        console.log(dados.datasets)
+        console.log('----------------------------------------------')
+
+        // Criando estrutura para plotar gráfico - config
+        const config = {
+            type: 'bar',
+            data: dados,
+        };
+        let myChart = new Chart(
+            document.getElementById('myChart'),
+            config  
+        ); myChart.update();
+    }
+
+</script>

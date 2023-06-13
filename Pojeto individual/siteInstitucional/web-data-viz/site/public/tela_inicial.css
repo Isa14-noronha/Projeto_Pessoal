@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css2?family=Alice&family=Roboto:ital,wght@1,100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alice&family=Nanum+Gothic&family=Roboto:ital,wght@1,100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+*{
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+}
+
+/* header */
+.header {
+    /* background-image: url(./imagens/header\ img.png); */
+    background-color: #F4F1ED;
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    background-repeat: no-repeat;
+    /* height: 100vh; */
+    background-size: cover;
+}
+
+.headerCadastro {
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    background-repeat: no-repeat;
+    /* height: 100vh; */
+    background-size: cover;
+    background-color: white;
+}
+
+.headerCadastro a{
+color: #000000;
+text-decoration: none;
+
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    /* margin-bottom: 11px; */
+    padding-bottom: 11px;
+    margin-top: -11px;
+}
+
+
+.headerCadastro .container {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .container .infos {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 1%;
+}
+
+.navBar {
+    color: #03071e;
+    list-style: none;
+    width: 375px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+}
+
+.navbar li {
+    padding: 5px;
+    /* border-bottom: 10px; */
+}
+
+/* pagina principal */
+.banner {
+    background-image: url(./imagens/tela\ inicial.png);
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-size: cover;
+}
+
+.banner .container {
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+
+
+.bemVindo {
+    display: flex;
+    padding: 70px 15px 0px 15px;
+    background-color: #000814;
+    justify-content: center;
+}
+
+
+.bemVindo .infos {
+    padding-left: 56px;
+    margin-top: 100px;
+}
+
+.bemVindo .infos h1{
+    font-family: 'Nanum Gothic';
+
+}
+
+.bemVindo .infos .titulo {
+    color: #ffeea5;
+    font-size: 50px;
+    width: 70%;
+    font-family: 'Alice';
+}
+
+.bemVindo .infos .textos {
+    color: white;
+    font-size: 20px;
+    width: 75%;
+    font-family: 'Nanum Gothic';
+}
+
+.sobreNos {
+    background-color: #ffeea5;
+    padding: 70px 15px 0px 15px;
+}
+
+.imgSaxofone {
+    padding: 0px;
+    margin-left: -71px;
+    margin-top: -148px;
+}
+
+.sobreNos h1 {
+    display: flex;
+    justify-content: center;
+    color: #03071e;
+    font-size: 40px;
+    font-family: '';
+}
+
+.sobreNos .card .texto {
+    border: 2px solid #0000007e;
+    border-style: solid;
+    padding-left: 15px;
+    width: 93%;
+    height: 130px;
+    margin-right: 1px;
+}
+
+.sobreNos .card {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.valores .card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-top: 6%;
+}
+
+.valores {
+    width: 100%;
+    height: 30px;
+}
+
+.valores {
+    background-color: #03071e;
+    height: 100%;
+    color: #ffeea5;
+    display: flex;
+    /* flex-direction: row-reverse;
+           background-repeat: no-repeat;
+           height: 135vh;
+           background-image: url(./imagens/imgPartituras.png); */
+    justify-content: center;
+}
+
+.valores .img {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    /* background-color: red; */
+}
+
+.valores h1 {
+    display: flex;
+    justify-content: center;
+    /* color: #03071e; */
+    font-size: 51px;
+    margin-top: 4%;
+}
+
+.valores .info {
+    margin-left: 85px;
+    /* margin-right: 20px; */
+    display: flex;
+}
+
+.valores .card .texto {
+    border: 2px solid #ffeea5;
+    border-style: solid;
+    padding-left: 10px;
+    width: 476px;
+    height: 83px;
+    /* border-left: 20px; */
+    /* margin-left: 56px;    */
+    /* background-color: aquamarine; */
+}
+
+.sobreNos .cardContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* background-color: red; */
+    width: 404px;
+}
+
+.valores .cardContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* background-color: red; */
+    width: 387px;
+}
+
+.partituras {
+    display: flex;
+    justify-content: flex-end;
+    /* background: url(); */
+    align-items: flex-start;
+}
+
+
+/* depoimentos */
+.depoimentos {
+    background-image: url(./imagens/depoimentosBackgroundImg.png);
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-size: cover;
+    color: #F4F1ED;
+}
+
+.depoimentos h1{
+    display: flex;
+    justify-content: center;
+    margin-top: 0px;
+    /* padding-top: 164px; */
+    width: 20%;
+    margin-left: 38% ;
+}
+
+.comentarios {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.cardComentarios {
+    background-color: rgba(255, 255, 255, 0.192);
+    width: 28%;
+    /* padding-left: 20px; */
+    padding: 45px 8px 200px 16px;
+}
+
+/* fim dos depoimentos  */
+
+/* footer */
+.footer {
+    background-color: #03071e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* position: fixed; */
+}
+
+.quadrados {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 35px;
+    margin-bottom: 20px;
+}
+
+.contato {
+    padding-left: 10px;
+    color: #F4F1ED;
+    border: 1px solid #F4F1ED;
+    width: 28%;
+}
+
+.marque {
+    border-radius: 28px;
+    border: 1px solid #F4F1ED;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+}
+
+/* sobre mim  */
+.sobreMim {
+    background-color: #FFEEA5;
+    width: 100%;
+    height: 610px;
+}
+
+.componentes{
+    padding: 12% 8% 8% 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.descricao {
+    width: 40%;
+    margin-right: 11%;
+}
